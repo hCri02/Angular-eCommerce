@@ -1,0 +1,23 @@
+
+<link rel="stylesheet" href="./login.component.css">
+
+<main class="form-signin w-100 m-auto text-center">
+    <form [formGroup]="loginForm" (ngSubmit)="onClick(email, password)">
+        <img class="mb-4" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/angular_logo_icon_169595.png" alt="Angular logo" width="72">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    
+        <div class="form-floating form">
+          <input type="email" class="form-control" id="floatingInput" formControlName="email" placeholder="name@example.com" #email>
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating form">
+          <input type="password" class="form-control" id="floatingPassword" formControlName="password" placeholder="Password" #password>
+          <label for="floatingPassword">Password</label>
+        </div><br><br>
+    
+        <button class="w-100 btn btn-lg btn-danger" type="submit" [disabled]="!loginForm.valid">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">Non hai un account? 
+            <a routerLink="/sign-up"><b>Registrati</b></a>
+        </p>
+    </form>
+</main>

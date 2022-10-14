@@ -1,0 +1,28 @@
+
+main {
+    padding: 0 300px;
+}
+
+/* unvisited link */
+a:link {
+    color: #dc3545;
+}
+  
+/* visited link */
+a:visited {
+    color: #dc3545;
+}
+
+/* mouse over link */
+a:hover {
+    color: #bb2d3b;
+}
+  
+/* selected link */
+a:active {
+    color: #b02a37;
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red !important;
+}

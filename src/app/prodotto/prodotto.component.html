@@ -1,0 +1,12 @@
+
+<div class="justify-content-center">
+    <div class="card" style="width: 18rem; height: 570px;">
+        <div class="card-body btn">
+            <h5 class="card-title">{{ prodotto?.nome }}</h5>
+            <img src="{{ prodotto?.foto }}">
+            <p class="card-text">{{ prodotto?.descrizione }}</p>
+            <p>{{ prodotto?.prezzo | currency:'EUR' }} <span class="sconto">{{ prodotto?.sconto }}%</span></p>
+            <a class="btn btn-danger" routerLink="/prodotti">Torna a prodotti</a>
+        </div>
+    </div>
+</div>

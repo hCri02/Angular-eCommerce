@@ -1,0 +1,27 @@
+
+<br><br><br>
+<h2>Riepilogo acquisti</h2>
+<br><br>
+
+<div class="col-md-6" *ngFor="let prodotto of carrelloProdotti">
+  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col p-4 d-flex flex-column position-static">
+      <strong class="d-inline-block mb-2 text-primary">{{ prodotto.nome }}</strong>
+      <h3 class="mb-0">{{ prodotto.prezzo }}</h3>
+      <div class="mb-1 text-muted">{{ data | date }}</div>
+      <p class="card-text mb-auto">{{ prodotto.descrizione }}</p>
+      <a class="stretched-link">Continue reading</a>
+    </div>
+    <div class="col-auto d-none d-lg-block">
+      <img [src]="prodotto.foto" alt="Immagine prodotto">
+    </div>
+  </div>
+</div>
+
+<br><br><hr>
+
+<div>
+  <h2 class="btn-danger">Totale: {{ sommaCarrello | currency: 'EUR' }}</h2><br><br>
+  <button class="w-100 btn btn-lg btn-danger" (click)="clear()" routerLink="/">Torna alla Homepage</button>
+  <br><br>
+</div>

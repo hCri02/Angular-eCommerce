@@ -1,0 +1,40 @@
+
+.sconto {
+    padding-left: 15px;
+    padding-top: 10px;
+    color: red;
+}
+
+.prezzo {
+    text-decoration: line-through;
+    font-size:smaller;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.space {
+    margin-left: 10px;
+}
+
+a {
+    border-radius: 20px 20px 20px 20px;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.050);
+    border-radius: 10px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}

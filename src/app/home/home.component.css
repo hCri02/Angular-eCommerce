@@ -1,0 +1,73 @@
+
+.container {
+    height: 30em;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+.c1 {
+    background-image: url("https://i05.appmifile.com/314_operator_it/04/10/2022/81fb43e3d92f3690abe0f42a7ff4cd6f.jpg?f=webp");
+}
+
+.c2 {
+    background-image: url("https://www.movilzona.es/app/uploads-movilzona.es/2021/03/Xiaomi-Mi-11.jpg");
+}
+
+.c3 {
+    background-image: url("https://www.hwupgrade.it/immagini/pocox3pro_11.jpg");
+}
+
+.body {
+    font-weight: 100;
+}
+
+.size {
+    font-size:x-large;
+}
+
+.top-space {
+    margin-top: 20px;
+}
+
+.center {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.sconto {
+    padding-left: 15px;
+    padding-top: 10px;
+    color: red;
+}
+
+.prezzo {
+    text-decoration: line-through;
+    font-size:smaller;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.space {
+    margin-left: 10px;
+}
+
+a {
+    border-radius: 10px 10px 10px 10px;
+}
+
+
+.card {
+    background-color: rgba(0, 0, 0, 0.050);
+    border-radius: 10px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+

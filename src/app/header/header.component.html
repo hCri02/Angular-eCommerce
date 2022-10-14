@@ -1,0 +1,35 @@
+
+<link rel="stylesheet" href="./header.component.css">
+
+<header class="p-2 border-bottom container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+        <img src="https://www.make-it.it/images/angular_logo.png" alt="Angular" width="200px">
+
+        <ul class="nav nav-tabs col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li class="nav-item"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link" aria-current="page">Home</a></li>
+            <li class="nav-item"><a routerLink="/prodotti" routerLinkActive="active" class="nav-link">Prodotti</a></li>
+            <li class="nav-item"><a (click)="checkAuth()" routerLinkActive="active" class="nav-link"><span class="badge bg-danger rounded-pill" *ngIf="contatore != 0">{{ contatore }}</span> Checkout</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div *ngIf="!logged" class="col-md-1.8 text-end">
+            <button type="button" class="btn btn-outline-danger me-2">
+                <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
+            </button>
+            <button type="button" class="btn btn-danger">
+                <a routerLink="/sign-up" routerLinkActive="active" class="nav-link">Sign-up</a>
+            </button>
+        </div>
+
+        <div *ngIf="logged" class="col-md-1.8 text-end">
+            <button type="button" class="btn btn-danger">
+                <a routerLink="/" (click)="onClickLogout()" routerLinkActive="active" class="nav-link">Logout</a>
+            </button>
+        </div>
+
+    </div>
+</header>

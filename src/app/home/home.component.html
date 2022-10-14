@@ -1,0 +1,86 @@
+
+<main>
+    <div class="center">
+        <h3><b>Xiaomi</b> Series</h3>
+        <p>Il meglio della tecnologia</p>
+    </div>
+    <div class="container c1">
+        <div class="body">
+            <div>
+                <h2><b>Xiamomi 12T Pro</b></h2>
+                <h4>Sistema fotografico a 200MP |</h4>
+                <h4>Snapdragon® 8+ Gen 1</h4>
+            </div>
+            <div>
+                <span>Da </span><b class="size">849,90€</b>
+                <div class="top-space">
+                    <a (click)="nonDisponibile()" class="btn btn-primary">Acquista ora</a>
+                    <a routerLink="/prodotti" class="btn btn-outline-primary space">Scopri di più</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="center">
+        <h3><b>Redmi</b> Series</h3>
+        <p>L'essenziale senza compromessi</p>
+    </div>
+    <div class="container c2">
+        <div class="body text-white">
+            <div>
+                <h2><b>Redmi Note 11 Pro+ 5G</b></h2>
+                <h4>HyperCharge a 120 W | MediaTek</h4>
+                <h4>Dimensity 920 5G</h4>
+            </div>
+            <div>
+                <span>Da </span><b class="size">352,38€</b>
+                <div class="top-space">
+                    <a (click)="nonDisponibile()" class="btn btn-secondary">Acquista ora</a>
+                    <a routerLink="/prodotti" class="btn btn-outline-secondary space">Scopri di più</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="center">
+        <h3><b>POCO</b> Series</h3>
+        <p>Poco ma buono</p>
+    </div>
+    <div class="container c3">
+        <div class="body">
+            <div>
+                <h2><b>POCO X4 GT</b></h2>
+                <h4>Display 144Hz DynamicSwitch |</h4>
+                <h4>Tripla fotocamera da 64MP</h4>
+            </div>
+            <div>
+                <span>Da </span><b class="size">331,95€</b>
+                <div class="top-space">
+                    <a (click)="nonDisponibile()" class="btn btn-success">Acquista ora</a>
+                    <a routerLink="/prodotti" class="btn btn-outline-success space">Scopri di più</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<br><br><br><hr>
+
+<h2 class="center">Prodotti popolari</h2>
+<div class="justify-content-center flex">
+    <div class="card" style="width: 18rem; height: 570px;" *ngFor="let prodotto of popolari">
+       <div>
+        <p class="sconto">{{ prodotto.sconto }}%</p>
+        <img src="{{ prodotto.foto }}">
+        <div class="card-body btn">
+            <h5 class="card-title">{{ prodotto.nome }}</h5>
+            <p class="card-text">{{ prodotto.descrizione }}</p>
+            <p>{{ prodotto.scontato | currency:'EUR' }}<span class="prezzo space">{{ prodotto.prezzo | currency:'EUR' }}</span></p>
+            <a class="btn btn-danger" (click)="conta(prodotto)">Acquista ora</a>
+            <a class="btn btn-outline-danger space" [routerLink]="['/prodotti', prodotto.slug]">Scopri di più</a>
+        </div>
+       </div>
+    </div>
+</div>
+
+<br><br><hr>

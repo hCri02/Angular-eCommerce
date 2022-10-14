@@ -1,0 +1,22 @@
+
+a {
+    border-radius: 10px 10px 10px 10px;
+}
+
+img {
+    display: inline;
+}
+
+.card {
+    margin: 50px auto;
+    padding-top: 50px;
+    text-align: center;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.050);
+}
+
+.sconto {
+    padding-left: 15px;
+    padding-top: 10px;
+    color: red;
+}

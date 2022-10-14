@@ -1,0 +1,28 @@
+
+<link rel="stylesheet" href="./sign-up.component.css">
+
+<main class="form-signin w-100 m-auto text-center">
+    <form [formGroup]="singUpForm" (ngSubmit)="onSubmit(email, password, confirmpassword)">
+        <img class="mb-4" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/angular_logo_icon_169595.png" alt="Angular logo" width="72">
+        <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+    
+        <div class="form-floating form">
+          <input type="email" class="form-control" id="floatingInput" formControlName="email" placeholder="name@example.com" #email>
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating form">
+          <input type="password" class="form-control" id="floatingPassword" formControlName="password" placeholder="Password" #password>
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating form">
+          <input #input3 type="password" class="form-control" id="floatingConfirmPassword" formControlName="confermaPassword" placeholder="Confirm password"
+            #confirmpassword>
+          <label for="floatingPassword">Confirm password</label>
+        </div><br><br>
+
+        <button class="w-100 btn btn-lg btn-danger" type="submit" [disabled]="!singUpForm.valid">Sign up</button>
+        <p class="mt-5 mb-3 text-muted">Hai già un account? 
+          <a routerLink="/login" routerLinkActive="active"><b>Accedi</b></a>
+        </p>
+    </form>
+</main>
