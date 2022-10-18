@@ -44,4 +44,9 @@ export class HeaderComponent implements OnInit {
     this._router.navigate(['/'])
   }
 
+  onRicerca(e: Event) {
+    const inputRef = <HTMLInputElement>e.target
+    this.prodottoService.filtraProdotto(inputRef.value)
+  }
+
 }

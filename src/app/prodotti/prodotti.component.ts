@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { CarrelloService } from '../carrello.service';
 import { Prodotto } from '../dati/prodotto.data';
@@ -17,14 +17,13 @@ export class ProdottiComponent implements OnInit {
   prodottiPoco: Prodotto[] = []
 
   prodottoCarrello!: Prodotto
-
   sottratto?: number
+  filtro: string
 
 
   constructor(private prodottoService :ProdottoService, private authService: AuthService, private carrello: CarrelloService) {
     this.prodotti = this.prodottoService.prodotti
   }
-
 
   ngOnInit(): void {
     this.prodotti.forEach((prodotto, index) => {
@@ -43,6 +42,11 @@ export class ProdottiComponent implements OnInit {
       
       prodotto.scontato = Math.round((prodotto.scontato + Number.EPSILON) * 100) / 100
     });
+
+    setInterval(() => {
+      this.filtro = this.prodottoService.filter.toLowerCase()
+      console.log(this.filtro);
+    }, 1000);
   }
 
   conta(prodottoCarrello:Prodotto) {
@@ -51,7 +55,7 @@ export class ProdottiComponent implements OnInit {
     if (this.authService.isAuthenticated()) {
       this.prodottoService.incrementaContatore()
       this.carrello.addProdotto(prodottoCarrello);
-
+      
      this.carrello.calcolaTotale()
 
       console.log(this.carrello.getCarrello());

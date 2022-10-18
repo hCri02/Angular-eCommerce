@@ -4,15 +4,17 @@
 <div>
     <h2>Xiaomi</h2>
     <div class="justify-content-center flex">
-        <div class="card" style="width: 18rem; height: 570px;" *ngFor="let prodotto of prodottiXiaomi">
-            <p class="sconto">{{ prodotto.sconto }}%</p>
-            <img src="{{ prodotto.foto }}">
-            <div class="card-body btn">
-                <h5 class="card-title">{{ prodotto.nome }}</h5>
-                <p class="card-text">{{ prodotto.descrizione }}</p>
-                <p>{{ prodotto.scontato | currency:'EUR' }}<span class="prezzo space">{{ prodotto.prezzo | currency:'EUR' }}</span></p>
-                <a class="btn btn-danger" (click)="conta(prodotto)">Acquista ora</a>
-                <a class="btn btn-outline-danger space" [routerLink]="['/prodotti', prodotto.slug]">Scopri di più</a>
+        <div *ngFor="let prodotto of prodottiXiaomi">
+            <div class="card" style="width: 18rem; height: 570px;" *ngIf="prodotto.nome.includes(filtro.toLowerCase())">
+                <p class="sconto">{{ prodotto.sconto }}%</p>
+                <img src="{{ prodotto.foto }}">
+                <div class="card-body btn">
+                    <h5 class="card-title">{{ prodotto.nome }}</h5>
+                    <p class="card-text">{{ prodotto.descrizione }}</p>
+                    <p>{{ prodotto.scontato | currency:'EUR' }}<span class="prezzo space">{{ prodotto.prezzo | currency:'EUR' }}</span></p>
+                    <a class="btn btn-danger" (click)="conta(prodotto)">Acquista ora</a>
+                    <a class="btn btn-outline-danger space" [routerLink]="['/prodotti', prodotto.slug]">Scopri di più</a>
+                </div>
             </div>
         </div>
     </div>
@@ -21,15 +23,17 @@
 
     <h2>Redmi</h2>
     <div class="justify-content-center flex">
-        <div class="card" style="width: 18rem; height: 570px;" *ngFor="let prodotto of prodottiRedmi">
-            <p class="sconto">{{ prodotto.sconto }}%</p>
-            <img src="{{ prodotto.foto }}">
-            <div class="card-body btn">
-                <h5 class="card-title">{{ prodotto.nome }}</h5>
-                <p class="card-text">{{ prodotto.descrizione }}</p>
-                <p>{{ prodotto.scontato | currency:'EUR' }}<span class="prezzo space">{{ prodotto.prezzo | currency:'EUR' }}</span></p>
-                <a class="btn btn-danger" (click)="conta(prodotto)">Acquista ora</a>
-                <a class="btn btn-outline-danger space" [routerLink]="['/prodotti', prodotto.slug]">Scopri di più</a>
+        <div *ngFor="let prodotto of prodottiRedmi">
+            <div class="card" style="width: 18rem; height: 570px;" *ngIf="prodotto.nome.includes(filtro)">
+                <p class="sconto">{{ prodotto.sconto }}%</p>
+                <img src="{{ prodotto.foto }}">
+                <div class="card-body btn">
+                    <h5 class="card-title">{{ prodotto.nome }}</h5>
+                    <p class="card-text">{{ prodotto.descrizione }}</p>
+                    <p>{{ prodotto.scontato | currency:'EUR' }}<span class="prezzo space">{{ prodotto.prezzo | currency:'EUR' }}</span></p>
+                    <a class="btn btn-danger" (click)="conta(prodotto)">Acquista ora</a>
+                    <a class="btn btn-outline-danger space" [routerLink]="['/prodotti', prodotto.slug]">Scopri di più</a>
+                </div>
             </div>
         </div>
     </div>
@@ -38,15 +42,17 @@
 
     <h2>POCO</h2>
     <div class="justify-content-center flex">
-        <div class="card" style="width: 18rem; height: 570px;" *ngFor="let prodotto of prodottiPoco">
-            <p class="sconto">{{ prodotto.sconto }}%</p>
-            <img src="{{ prodotto.foto }}">
-            <div class="card-body btn">
-                <h5 class="card-title">{{ prodotto.nome }}</h5>
-                <p class="card-text">{{ prodotto.descrizione }}</p>
-                <p>{{ prodotto.scontato | currency:'EUR' }}<span class="prezzo space">{{ prodotto.prezzo | currency:'EUR' }}</span></p>
-                <a class="btn btn-danger" (click)="conta(prodotto)">Acquista ora</a>
-                <a class="btn btn-outline-danger space" [routerLink]="['/prodotti', prodotto.slug]">Scopri di più</a>
+        <div *ngFor="let prodotto of prodottiPoco">
+            <div class="card" style="width: 18rem; height: 570px;" *ngIf="prodotto.nome.includes(filtro)">
+                <p class="sconto">{{ prodotto.sconto }}%</p>
+                <img src="{{ prodotto.foto }}">
+                <div class="card-body btn">
+                    <h5 class="card-title">{{ prodotto.nome }}</h5>
+                    <p class="card-text">{{ prodotto.descrizione }}</p>
+                    <p>{{ prodotto.scontato | currency:'EUR' }}<span class="prezzo space">{{ prodotto.prezzo | currency:'EUR' }}</span></p>
+                    <a class="btn btn-danger" (click)="conta(prodotto)">Acquista ora</a>
+                    <a class="btn btn-outline-danger space" [routerLink]="['/prodotti', prodotto.slug]">Scopri di più</a>
+                </div>
             </div>
         </div>
     </div>

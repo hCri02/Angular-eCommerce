@@ -19,6 +19,7 @@ export class ProdottoService {
   ]
 
   private _contatore = 0
+  private filtro = ""
 
   // private _carrello :Prodotto[] = []
 
@@ -48,6 +49,14 @@ export class ProdottoService {
 
   cercaProdotto(slug: string) {
     return this._prodotti.find(p => p.slug === slug)
+  }
+
+  filtraProdotto(input: string) {
+    this.filtro = input
+  }
+
+  get filter() {
+    return this.filtro
   }
 
   // get carrello() {
